@@ -1,1 +1,5 @@
-livre sera dans biblio et il sera serialisable
+ça sera la meme chose que le premier exo
+juste que le serveur devient la bibliothèque
+livre sera dans biblio et il sera serialisable, car les objects ne sont plus primitifs
+le client utilise la bibliothèque pour ajouter, supprimer ou rechercher un livre
+
