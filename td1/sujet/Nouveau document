@@ -3,3 +3,9 @@ juste que le serveur devient la bibliothèque
 livre sera dans biblio et il sera serialisable, car les objects ne sont plus primitifs
 le client utilise la bibliothèque pour ajouter, supprimer ou rechercher un livre
 
+Les classes à implémenter
+1- Interface Bibliotheque.java
+2- Classe Livre.java et BibliothequeImpl.java
+3- Serveur BiblioServer.java
+4- Client BiblioClient.java
+
