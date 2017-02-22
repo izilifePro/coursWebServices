@@ -1,0 +1,26 @@
+import java.rmi.*;
+
+public class BiblioClient{
+
+	public static void main(String[] args){		
+		try {
+		    String codeBase = "file:///users/nianse15/Bureau/coursWebServices/td1/";
+		    System.setProperty("java.rmi.server.codebase", codeBase);
+		    System.setProperty("java.security.policy", "security.policy"); 
+		    System.setSecurityManager(new RMISecurityManager());
+		    Bibliotheque biblio = (Bibliotheque) Naming.lookup("rmi://localhost:1099/BibliothequeService");
+		    System.out.println(biblio.add(1, "Nommade", "Cheikh Anta DIOP"));
+		    System.out.println(biblio.add(2, "L'enfant noir", "Camara LAYE"));
+		    System.out.println(biblio.add(3, "Une si longue lettre", "Mariame BA"));
+		    System.out.println(biblio.add(4, "Le ventre de l'atlantique", "Fatou DIOME"));
+		    System.out.println(biblio.add(5, "La crise de 2008", "Jacques ATTALI"));
+		    System.out.println(biblio.add(6, "Toto tape pathe", "Ben Omar"));
+		    
+		    List<Book> list = biblio.findAuteur("Fatou DIOME");
+		    System.out.println("Fatou DIOME a écrit "+ list);		    
+		    
+		} catch (Exception e) {
+		    System.err.println("Server exception: " + e.getMessage());		 
+		}
+	}
+}

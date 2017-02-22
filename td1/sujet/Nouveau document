@@ -9,3 +9,9 @@ Les classes à implémenter
 3- Serveur BiblioServer.java
 4- Client BiblioClient.java
 
+
+Consigne
+L'objet distribué est le livre
+Dans un premier temps il faut le faire passer par valeur (la classe doit etre sérializable : implements Serializable et ses attr doivent etre privees)
+Dans un second temps il faut le faire passer par référence
+

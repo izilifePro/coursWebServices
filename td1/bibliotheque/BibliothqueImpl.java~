@@ -1,0 +1,42 @@
+import java.rmi.*;
+import java.rmi.Server; 
+import java.util.*;
+import java.util.Map.Entry; 
+
+public class BibliothequeImpl extends UnicastRemoteObject implements Bibliotheque{
+	public HashMap<int, Book> books; 
+	public BibliothequeImpl() throws RemoteException {
+		super();
+		books = new HashMap<int, Book>(); 
+	}
+
+	public void add(int isbn, String titre, String auteur) throws RemoteException{
+		Book b = new Book(isbn, titre, auteur); 
+		books.put(new int(isbn), b); 
+	}
+	public void delete(int isbn) throws RemoteException{
+		books.remove(new int(isbn));
+	}
+	public List<Book> findAuteur(String titre) throws RemoteException{
+		List bookList = new ArrayList<Book>();
+		for(Entry <int, Book> entry : books.entrySet()){
+			int isbn = entry.getKey(); 
+			Book b = entry.getValue();
+			if(b.getTitre().equals(titre)){
+				bookList.add(b);
+			}		
+		}
+		return bookList;
+	}
+	public List<Book> findTitre(String auteur) throws RemoteException{
+		List bookList = new ArrayList<Book>();
+		for(Entry <int, Book> entry : books.entrySet()){
+			int isbn = entry.getKey(); 
+			Book b = entry.getValue();
+			if(b.getAuteur().equals(auteur)){
+				bookList.add(b);
+			}		
+		}
+		return bookList;
+	}
+}
