@@ -1,6 +1,5 @@
-import java.io.Serializable; 
 
-public class Book implements Serializable{
+public class Book extends Remote implements IBook{
 	private int isbn; 
 	private String titre; 
 	private String auteur; 

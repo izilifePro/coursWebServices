@@ -20,7 +20,7 @@ public class BiblioClient{
 		    biblio.add(5, "La crise de 2008", "Jacques ATTALI");
 		    biblio.add(6, "Toto tape pathe", "Ben Omar");
 		    
-		    List<Book> list = biblio.findTitre("Fatou DIOME");		    
+		    List<IBook> list = biblio.findTitre("Fatou DIOME");		    
 		    System.out.println("Fatou DIOME a écrit "+ list);		    
 		    
 		} catch (Exception e) {

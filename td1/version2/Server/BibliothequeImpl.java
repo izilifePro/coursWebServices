@@ -17,7 +17,7 @@ public class BibliothequeImpl extends UnicastRemoteObject implements Bibliothequ
 	public void delete(int isbn) throws RemoteException{
 		books.remove(new Integer(isbn));
 	}
-	public List<Book> findTitre(String titre) throws RemoteException{
+	public List<IBook> findTitre(String titre) throws RemoteException{
 		List bookList = new ArrayList<Book>();
 		for(Entry<Integer, Book> entry : books.entrySet()){
 			Integer isbn = entry.getKey(); 
@@ -28,7 +28,7 @@ public class BibliothequeImpl extends UnicastRemoteObject implements Bibliothequ
 		}
 		return bookList;
 	}
-	public List<Book> findAuteur(String auteur) throws RemoteException{
+	public List<IBook> findAuteur(String auteur) throws RemoteException{
 	System.out.println(books.size());		
 	List bookList = new ArrayList<Book>();
 		for(Entry<Integer, Book> entry : books.entrySet()){

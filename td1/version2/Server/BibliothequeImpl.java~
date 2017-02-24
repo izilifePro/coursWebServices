@@ -2,8 +2,9 @@ import java.rmi.*;
 import java.rmi.server.*; 
 import java.util.*;
 import java.util.Map.Entry; 
+import java.io.Serializable; 
 
-public class BibliothequeImpl extends UnicastRemoteObject implements Bibliotheque{
+public class BibliothequeImpl extends UnicastRemoteObject implements Bibliotheque, Serializable{
 	public HashMap<Integer, Book> books; 
 	public BibliothequeImpl() throws RemoteException {
 		super();
@@ -29,7 +30,8 @@ public class BibliothequeImpl extends UnicastRemoteObject implements Bibliothequ
 		return bookList;
 	}
 	public List<Book> findAuteur(String auteur) throws RemoteException{
-		List bookList = new ArrayList<Book>();
+	System.out.println(books.size());		
+	List bookList = new ArrayList<Book>();
 		for(Entry<Integer, Book> entry : books.entrySet()){
 			Integer isbn = entry.getKey(); 
 			Book b = entry.getValue();

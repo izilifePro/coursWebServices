@@ -12,6 +12,16 @@ Les classes à implémenter
 
 Consigne
 L'objet distribué est le livre
-Dans un premier temps il faut le faire passer par valeur (la classe doit etre sérializable : implements Serializable et ses attr doivent etre privees)
-Dans un second temps il faut le faire passer par référence
+1*- Dans un premier temps il faut le faire passer par valeur, une copie (la classe doit etre sérializable : implements Serializable et ses attr doivent etre privees)
+
+2*- Dans un second temps il faut le faire passer par référence, ( c'est la biblio qui sera serialisable, lui créer une interface)
+le code source de Book ne doit pas etre present dans les deux coté, ça dépend de la solution choisie, 
+c du cote de new book qu'il faut faire le code source de la classe Book
+
+
+
+exo2
+L'observé doit fournir une meéthoide appellable a distance par les observés
+Pour pouvoir passer un observateur en param il doit etre de type : reference
+le client et le serveur jouent le role d'observateur et d'oservé et s'appellent mutuellement
 

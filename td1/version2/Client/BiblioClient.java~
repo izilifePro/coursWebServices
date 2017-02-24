@@ -11,6 +11,7 @@ public class BiblioClient{
 		    System.setProperty("java.rmi.server.codebase", codeBase);
 		    System.setProperty("java.security.policy", "security.policy"); 
 		    System.setSecurityManager(new RMISecurityManager());
+
 		    Bibliotheque biblio = (Bibliotheque) Naming.lookup("rmi://localhost:1099/BibliothequeService");
 		    biblio.add(1, "Nommade", "Cheikh Anta DIOP");
 		    biblio.add(2, "L'enfant noir", "Camara LAYE");

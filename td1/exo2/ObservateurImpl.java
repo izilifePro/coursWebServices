@@ -1,0 +1,8 @@
+import java.rmi.*;
+
+public class ObservateurImpl extends UnicastRemoteObject implements Observateur{
+	
+	public void newValue(int value) throws RemoteException{
+		System.out.println("Changed "+value);
+	}
+}
